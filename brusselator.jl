@@ -37,8 +37,8 @@ prob = ODEProblem(brusselator!, u0, tspan, p)
 sol = solve(prob)
 
 # Stationary solutions
-X_s = (k_1 / k_4) * A_c
-Y_s = (k_4 * k_2 * B_c) / (k_3 * k_1 * A_c)
+#X_s = (k_1 / k_4) * A_c
+#Y_s = (k_4 * k_2 * B_c) / (k_3 * k_1 * A_c)
 
 # Saving the plot of the solution
 using Plots
@@ -47,8 +47,8 @@ plot(sol; idxs = 1, lc=:red, label = "[X](t)", xlabel = "Time", ylabel = "Concen
 plot!(sol; idxs = 2, lc=:blue, label = "[Y](t)")
 
 # Plotting the stationary solution as dashed lines
-plot!(t -> X_s; ls=:dash, lc=:red, label = "Stationary [X]" )
-plot!(t -> Y_s; ls=:dash, lc=:blue, label = "Stationary [Y]" )
+#plot!(t -> X_s; ls=:dash, lc=:red, label = "Stationary [X]" )
+#plot!(t -> Y_s; ls=:dash, lc=:blue, label = "Stationary [Y]" )
 
 # Saving the plot
 savefig("brusselator.png")
